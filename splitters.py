@@ -22,7 +22,7 @@ def bert_cls_splitter(m):
 
 def bertbase_cls_splitter(m):
     "Split the classifier head from the backbone"
-    groups = [nn.Sequential(m.transformer.bert.embeddings,
+    groups = [nn.Sequential(m.transformer.embeddings,
                 m.transformer.encoder.layer[0],
                 m.transformer.encoder.layer[1],
                 m.transformer.encoder.layer[2],
