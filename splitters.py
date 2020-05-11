@@ -82,6 +82,7 @@ def roberta_cls_splitter(m):
     return groups.map(params)
 
 splitters = {'bert_cls_splitter':bert_cls_splitter,
+             'bertbase_cls_splitter':bertbase_cls_splitter,
             'albert_cls_splitter':albert_cls_splitter,
             'distilbert_cls_splitter':distilbert_cls_splitter,
             'roberta_cls_splitter':roberta_cls_splitter}
