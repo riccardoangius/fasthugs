@@ -100,6 +100,7 @@ def roberta_cls_splitter(m):
 
 splitters = {'bert_cls_splitter':bert_cls_splitter,
              'bertbase_cls_splitter':bertbase_cls_splitter,
+             'bertcnn_cls_splitter':bertcnn_cls_splitter,
             'albert_cls_splitter':albert_cls_splitter,
             'distilbert_cls_splitter':distilbert_cls_splitter,
             'roberta_cls_splitter':roberta_cls_splitter}
