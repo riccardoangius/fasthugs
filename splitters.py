@@ -39,6 +39,23 @@ def bertbase_cls_splitter(m):
     groups = L(groups + [m.predict]) 
     return groups.map(params)
 
+def bertcnn_cls_splitter(m):
+    "Split the classifier head from the backbone"
+    groups = [nn.Sequential(m.transformer.embeddings,
+                m.transformer.encoder.layer[0],
+                m.transformer.encoder.layer[1],
+                m.transformer.encoder.layer[2],
+                m.transformer.encoder.layer[3],
+                m.transformer.encoder.layer[4],
+                m.transformer.encoder.layer[5],
+                m.transformer.encoder.layer[6],
+                m.transformer.encoder.layer[7],
+                m.transformer.encoder.layer[8],
+                m.transformer.encoder.layer[9],
+                m.transformer.encoder.layer[10]
+                )]
+    groups = L(groups + [m.transformer.encoder.layer[11]]) 
+    return groups.map(params)
 
 def albert_cls_splitter(m):
     groups = [nn.Sequential(m.transformer.albert.embeddings,
